@@ -1,0 +1,22 @@
+<h1>{{title}}</h1> 
+<!-- <img [src]="bridgeLabzLogo" alt="BridgeLabz Logo" width="200"> -->
+
+<img [src]="bridgeLabzLogo" alt="BridgeLabz Logo" width="200" (click)="openBridgeLabz()" style="cursor: pointer;" title="Click to visit BridgeLabz">
+
+<!-- <div style="text-align: center; margin-top: 20px;">
+    <h2>Enter Your Name:</h2>
+    <input type="text" [(ngModel)]="userName" placeholder="Enter name" />
+    <h3>Hello {{ userName }} from BridgeLabz</h3>
+  </div> -->
+  
+
+  <div style="text-align: center; margin-top: 20px;">
+    <h2>Enter Your Name:</h2>
+    
+    <input type="text" [(ngModel)]="userName" (input)="validateUserName()" placeholder="Enter name" />
+  
+    <h3 *ngIf="!errorMessage">Hello {{ userName }} from BridgeLabz</h3>
+    
+    <p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>
+  </div>
+  
